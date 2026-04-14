@@ -20,6 +20,14 @@ export default function Achievements() {
       year: "2024"
     },
     {
+      title: "Software Engineering Intern",
+      event: "Tech Innovations",
+      description: "Designed, built, and maintained core features of the enterprise web application suite.",
+      link: "#",
+      year: "2024",
+      buttonText: "View my certificates"
+    },
+    {
       title: "Open Source Contributor",
       event: "Hacktoberfest",
       description: "Contributed over 10 substantial PRs to major React and TypeScript repositories.",
@@ -47,7 +55,7 @@ export default function Achievements() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {achievements.map((item, index) => (
             <motion.div
               key={index}
@@ -81,7 +89,7 @@ export default function Achievements() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm font-medium text-white hover:text-zinc-300 transition-colors bg-white/10 px-4 py-2 rounded-full hover:bg-white/20"
                 >
-                  View Certificate <ExternalLink size={14} />
+                  {item.buttonText || "View Certificate"} <ExternalLink size={14} />
                 </a>
               </div>
             </motion.div>
