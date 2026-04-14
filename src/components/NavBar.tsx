@@ -8,6 +8,7 @@ const navItems = [
   { name: "About", id: "about" },
   { name: "Projects", id: "projects" },
   { name: "Experience", id: "experience" },
+  { name: "Achievements", id: "achievements" },
   { name: "Contact", id: "contact" },
 ];
 
