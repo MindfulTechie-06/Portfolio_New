@@ -9,7 +9,7 @@ export default function Achievements() {
       title: "Hackathon Winner",
       event: "Global Tech Innovation Hack",
       description: "Built an AI-driven accessibility tool within 48 hours, winning first place against 100+ teams.",
-      link: "#",
+      link: "https://drive.google.com/drive/folders/1ajBZAmnyBEXpEu5INDXrV3_Gt4QfNtkN",
       year: "2025"
     },
     {
