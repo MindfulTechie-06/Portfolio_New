@@ -11,13 +11,13 @@ export default function Experience() {
       description: "Contributing to the community's technical infrastructure, building robust web solutions, and engaging in collaborative large-scale digital initiatives.",
       current: true
     },
-    {
-      role: "Creative Developer",
-      company: "Freelance",
-      date: "2024 - Present",
-      description: "Designing and developing interactive 3D web experiences, creative portfolios, and optimized frontend architectures for selected clients.",
-      current: false
-    }
+    // {
+    //   role: "Creative Developer",
+    //   company: "Freelance",
+    //   date: "2024 - Present",
+    //   description: "Designing and developing interactive 3D web experiences, creative portfolios, and optimized frontend architectures for selected clients.",
+    //   current: false
+    // }
   ];
 
   return (

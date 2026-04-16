@@ -6,14 +6,15 @@ import { ArrowUpRight, Code2, ExternalLink } from "lucide-react";
 export default function Projects() {
   const projects = [
     {
-      title: "Neon Genesis",
-      description: "An experimental webGL product configurator built for futuristic apparel.",
-      tags: ["Three.js", "React", "GSAP"],
-      year: "2026",
+      title: "InnoSphere",
+      description: "An AI-powered educational content platform that generates engaging video lessons for learners of all ages. Designed to scale content creation using modern generative AI tools.",
+
+      tags: ["Node.js", "React", "Gemini API"],
+      year: "2025",
     },
     {
       title: "Lumina Studio",
-      description: "A dark-mode first portfolio template for photographers and visual artists.",
+      description: "A 24-hour hackathon project focused on solving real-world problems using AI-driven solutions and rapid prototyping.",
       tags: ["Next.js", "Tailwind", "Framer Motion"],
       year: "2025",
     },
