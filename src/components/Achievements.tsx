@@ -16,7 +16,7 @@ export default function Achievements() {
       title: "Google Cloud Study Jam",
       event: "Google Developer Groups",
       description: "Successfully completed advanced tracks in generative AI and cloud infrastructure.",
-      link: "#",
+      link: "https://drive.google.com/drive/folders/1P80TCIPr4CPYpN_N_L0rD3LzU1gGIm7z",
       year: "2024"
     },
     {
@@ -39,8 +39,8 @@ export default function Achievements() {
   return (
     <section id="achievements" className="relative z-20 bg-[#121212] py-32 px-6 md:px-20 lg:px-40 text-white">
       <div className="max-w-7xl mx-auto">
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -67,7 +67,7 @@ export default function Achievements() {
             >
               {/* Subtle hover glow effect */}
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              
+
               <div className="relative z-10 flex-grow">
                 <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6">
                   <Award className="text-zinc-300" size={24} />
@@ -80,12 +80,12 @@ export default function Achievements() {
                   {item.description}
                 </p>
               </div>
-              
+
               <div className="relative z-10 mt-auto flex items-center justify-between">
                 <span className="text-sm font-mono text-zinc-500 bg-[#121212] px-3 py-1 rounded-full">{item.year}</span>
-                <a 
-                  href={item.link} 
-                  target="_blank" 
+                <a
+                  href={item.link}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-sm font-medium text-white hover:text-zinc-300 transition-colors bg-white/10 px-4 py-2 rounded-full hover:bg-white/20"
                 >
