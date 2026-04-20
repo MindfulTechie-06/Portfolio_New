@@ -11,8 +11,8 @@ export default function Projects() {
 
       tags: ["Node.js", "React", "Gemini API"],
       year: "2025",
-      githubLink: "#",
-      liveLink: "#"
+      githubLink: "https://github.com/MindfulTechie-06/Innosphere_GSC",
+      liveLink: "https://innosphere-gsc.vercel.app/"
     },
     {
       title: "Architect AI",
