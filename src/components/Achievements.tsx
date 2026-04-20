@@ -6,7 +6,7 @@ import { Award, ExternalLink, BadgeCheck } from "lucide-react";
 export default function Achievements() {
   const achievements = [
     {
-      title: "Hackathon Winner",
+      title: "Hackathon ",
       event: "Global Tech Innovation Hack",
       description: "Built an AI-driven accessibility tool within 48 hours, winning first place against 100+ teams.",
       link: "https://drive.google.com/drive/folders/1ajBZAmnyBEXpEu5INDXrV3_Gt4QfNtkN",
@@ -23,16 +23,16 @@ export default function Achievements() {
       title: "Software Engineering Intern",
       event: "Tech Innovations",
       description: "Designed, built, and maintained core features of the enterprise web application suite.",
-      link: "#",
-      year: "2024",
+      link: "https://drive.google.com/drive/folders/17dEfFRf15gSZ0P1OQXExq_ZjUU45672x",
+      year: "2026",
       buttonText: "View my certificates"
     },
     {
       title: "Open Source Contributor",
-      event: "Hacktoberfest",
-      description: "Contributed over 10 substantial PRs to major React and TypeScript repositories.",
-      link: "#",
-      year: "2024"
+      event: "Aperture 3.0",
+      description: "Contributed to real-world projects.",
+      link: "https://drive.google.com/drive/folders/1L1PvYfjZHnvWDMd6eOER85kMfpR3eiGC",
+      year: "2026"
     }
   ];
 
