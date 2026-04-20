@@ -13,10 +13,10 @@ export default function Projects() {
       year: "2025",
     },
     {
-      title: "Lumina Studio",
-      description: "A 24-hour hackathon project focused on solving real-world problems using AI-driven solutions and rapid prototyping.",
-      tags: ["Next.js", "Tailwind", "Framer Motion"],
-      year: "2025",
+      title: "Architect AI",
+      description: "Built a high-frequency AI automation platform designed to streamline workflows and enhance operational efficiency for modern teams.",
+      tags: ["Next.js", "Tailwind", "React"],
+      year: "2026",
     },
     {
       title: "Chroma API",
