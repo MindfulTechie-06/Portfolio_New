@@ -41,21 +41,21 @@ export default function Achievements() {
       title: "AI Fluency: Framework & Foundations",
       issuer: "Anthropic",
       description: "Completed the foundational framework course on Artificial Intelligence fluency.",
-      link: "#",
+      link: "https://drive.google.com/drive/folders/1QaUGAHan9KvXH2J2a1Y7BHL_BDaRUSiR",
       year: "2025"
     },
     {
       title: "Gemini Certified Student",
       issuer: "Google for Education",
       description: "Demonstrated the knowledge, skills, and basic competencies needed to use Google AI.",
-      link: "#",
+      link: "https://drive.google.com/drive/folders/1QaUGAHan9KvXH2J2a1Y7BHL_BDaRUSiR",
       year: "2025"
     },
     {
       title: "Bring AI to Work Workshop",
       issuer: "Google Workspace",
       description: "Successfully completed the workshop on integrating and applying AI tools in professional workflows.",
-      link: "#",
+      link: "https://drive.google.com/drive/folders/1QaUGAHan9KvXH2J2a1Y7BHL_BDaRUSiR",
       year: "2025"
     }
   ];
