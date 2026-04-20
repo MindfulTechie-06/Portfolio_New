@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, ExternalLink } from "lucide-react";
+import { Award, ExternalLink, BadgeCheck } from "lucide-react";
 
 export default function Achievements() {
   const achievements = [
@@ -33,6 +33,30 @@ export default function Achievements() {
       description: "Contributed over 10 substantial PRs to major React and TypeScript repositories.",
       link: "#",
       year: "2024"
+    }
+  ];
+
+  const certifications = [
+    {
+      title: "AI Fluency: Framework & Foundations",
+      issuer: "Anthropic",
+      description: "Completed the foundational framework course on Artificial Intelligence fluency.",
+      link: "#",
+      year: "2025"
+    },
+    {
+      title: "Gemini Certified Student",
+      issuer: "Google for Education",
+      description: "Demonstrated the knowledge, skills, and basic competencies needed to use Google AI.",
+      link: "#",
+      year: "2025"
+    },
+    {
+      title: "Bring AI to Work Workshop",
+      issuer: "Google Workspace",
+      description: "Successfully completed the workshop on integrating and applying AI tools in professional workflows.",
+      link: "#",
+      year: "2025"
     }
   ];
 
@@ -90,6 +114,62 @@ export default function Achievements() {
                   className="flex items-center gap-2 text-sm font-medium text-white hover:text-zinc-300 transition-colors bg-white/10 px-4 py-2 rounded-full hover:bg-white/20"
                 >
                   {item.buttonText || "View Certificate"} <ExternalLink size={14} />
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Certifications Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="mt-32 mb-20 text-center"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+            Certifications
+          </h2>
+          <p className="mt-4 text-zinc-400 text-lg max-w-2xl mx-auto font-light">
+            Professional certifications demonstrating continuous learning and expertise.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {certifications.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-50px" }}
+              className="group relative rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md overflow-hidden hover:bg-white/10 transition-colors duration-500 flex flex-col justify-between"
+            >
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+              <div className="relative z-10 flex-grow">
+                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6">
+                  <BadgeCheck className="text-zinc-300" size={24} />
+                </div>
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="text-xl font-semibold tracking-tight leading-tight">{item.title}</h3>
+                </div>
+                <p className="text-zinc-300 font-medium mb-3">{item.issuer}</p>
+                <p className="text-zinc-400 font-light text-sm mb-8 pt-4 border-t border-white/10">
+                  {item.description}
+                </p>
+              </div>
+
+              <div className="relative z-10 mt-auto flex items-center justify-between">
+                <span className="text-sm font-mono text-zinc-500 bg-[#121212] px-3 py-1 rounded-full">{item.year}</span>
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm font-medium text-white hover:text-zinc-300 transition-colors bg-white/10 px-4 py-2 rounded-full hover:bg-white/20"
+                >
+                  View <ExternalLink size={14} />
                 </a>
               </div>
             </motion.div>
