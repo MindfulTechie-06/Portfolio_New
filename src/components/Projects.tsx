@@ -11,24 +11,32 @@ export default function Projects() {
 
       tags: ["Node.js", "React", "Gemini API"],
       year: "2025",
+      githubLink: "#",
+      liveLink: "#"
     },
     {
       title: "Architect AI",
       description: "Built a high-frequency AI automation platform designed to streamline workflows and enhance operational efficiency for modern teams.",
       tags: ["Next.js", "Tailwind", "React"],
       year: "2026",
+      githubLink: "https://github.com/MindfulTechie-06/architect-ai",
+      liveLink: "https://architect-ai-topaz.vercel.app/"
     },
     {
       title: "Chroma API",
       description: "A high-performance color palette generator and API built on Rust.",
       tags: ["Rust", "Actix", "Redis"],
       year: "2025",
+      githubLink: "#",
+      liveLink: "#"
     },
     {
       title: "Abyss Protocol",
       description: "Decentralized data aggregation dashboard with real-time websocket streams.",
       tags: ["React", "D3.js", "WebSockets"],
       year: "2024",
+      githubLink: "#",
+      liveLink: "#"
     },
   ];
 
@@ -83,12 +91,24 @@ export default function Projects() {
                   </div>
                   
                   <div className="flex gap-4">
-                    <button className="text-zinc-400 hover:text-white transition-colors">
+                    <a 
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-zinc-400 hover:text-white transition-colors"
+                      title="View Code"
+                    >
                       <Code2 size={20} />
-                    </button>
-                    <button className="text-zinc-400 hover:text-white transition-colors">
+                    </a>
+                    <a 
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-zinc-400 hover:text-white transition-colors"
+                      title="View Live Site"
+                    >
                       <ArrowUpRight size={22} />
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
