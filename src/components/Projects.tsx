@@ -23,19 +23,19 @@ export default function Projects() {
       liveLink: "https://architect-ai-topaz.vercel.app/"
     },
     {
-      title: "Chroma API",
-      description: "A high-performance color palette generator and API built on Rust.",
-      tags: ["Rust", "Actix", "Redis"],
-      year: "2025",
-      githubLink: "#",
+      title: "Grid 7.1",
+      description: "GRID 7.1 is an AI-powered smart grid intelligence system designed to solve one of the most critical challenges in power distribution.",
+      tags: ["React(Vite)", "Tailwind", "FastAPI"],
+      year: "2026",
+      githubLink: "https://github.com/MindfulTechie-06/grid-sense-ai",
       liveLink: "#"
     },
     {
-      title: "Abyss Protocol",
-      description: "Decentralized data aggregation dashboard with real-time websocket streams.",
-      tags: ["React", "D3.js", "WebSockets"],
-      year: "2024",
-      githubLink: "#",
+      title: "AI Mood Journal",
+      description: "AI Mood Journal is a smart journaling app that combines the simplicity of writing with the power of artificial intelligence.",
+      tags: ["Streamlit", "Python", "HuggingFace"],
+      year: "2025",
+      githubLink: "https://github.com/MindfulTechie-06/Ai-MoodJournal",
       liveLink: "#"
     },
   ];
