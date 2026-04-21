@@ -20,11 +20,11 @@ export default function Achievements() {
       year: "2024"
     },
     {
-      title: "Software Engineering Intern",
+      title: "Internships",
       event: "Tech Innovations",
-      description: "Designed, built, and maintained core features of the enterprise web application suite.",
+      description: "Gained practical experience in real-world software development by contributing to the design and maintenance of core features in an enterprise web application.",
       link: "https://drive.google.com/drive/folders/17dEfFRf15gSZ0P1OQXExq_ZjUU45672x",
-      year: "2026",
+      year: "2025-2026",
       buttonText: "View my certificates"
     },
     {
