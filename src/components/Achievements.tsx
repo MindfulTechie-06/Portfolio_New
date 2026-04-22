@@ -17,7 +17,7 @@ export default function Achievements() {
       event: "Google Developer Groups",
       description: "Successfully completed advanced tracks in generative AI and cloud infrastructure.",
       link: "https://drive.google.com/drive/folders/1P80TCIPr4CPYpN_N_L0rD3LzU1gGIm7z",
-      year: "2024"
+      year: "2025"
     },
     {
       title: "Internships",
