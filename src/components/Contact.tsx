@@ -6,6 +6,7 @@ import { Send, CheckCircle, XCircle } from "lucide-react";
 import Script from "next/script";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [focusedInput, setFocusedInput] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const [isSending, setIsSending] = useState(false);
@@ -29,6 +30,7 @@ export default function Contact() {
           setFeedbackMsg({ type: 'success', text: 'Message sent successfully!' });
           setIsSending(false);
           formRef.current?.reset();
+          setFormData({ name: '', email: '', message: '' });
           setFocusedInput(null);
         }, (error: any) => {
           console.error(error);
@@ -99,15 +101,17 @@ export default function Contact() {
                 type="text" 
                 id="name"
                 name="name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 onFocus={() => setFocusedInput('name')}
-                onBlur={(e) => setFocusedInput(e.target.value ? 'name' : null)}
+                onBlur={() => setFocusedInput(null)}
                 className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white outline-none transition-all duration-300 focus:bg-white/10 focus:border-white/30 peer"
                 required
               />
               <label 
                 htmlFor="name" 
                 className={`absolute left-6 text-zinc-500 transition-all duration-300 pointer-events-none ${
-                  focusedInput === 'name' ? 'top-2 text-xs text-zinc-300' : 'top-4 text-base'
+                  focusedInput === 'name' || formData.name.length > 0 ? 'top-2 text-xs text-zinc-300' : 'top-4 text-base'
                 }`}
               >
                 Your Name
@@ -121,15 +125,17 @@ export default function Contact() {
                 type="email" 
                 id="email"
                 name="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 onFocus={() => setFocusedInput('email')}
-                onBlur={(e) => setFocusedInput(e.target.value ? 'email' : null)}
+                onBlur={() => setFocusedInput(null)}
                 className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white outline-none transition-all duration-300 focus:bg-white/10 focus:border-white/30 peer"
                 required
               />
               <label 
                 htmlFor="email" 
                 className={`absolute left-6 text-zinc-500 transition-all duration-300 pointer-events-none ${
-                  focusedInput === 'email' ? 'top-2 text-xs text-zinc-300' : 'top-4 text-base'
+                  focusedInput === 'email' || formData.email.length > 0 ? 'top-2 text-xs text-zinc-300' : 'top-4 text-base'
                 }`}
               >
                 Email Address
@@ -142,15 +148,17 @@ export default function Contact() {
                 id="message"
                 name="message"
                 rows={4}
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 onFocus={() => setFocusedInput('message')}
-                onBlur={(e) => setFocusedInput(e.target.value ? 'message' : null)}
+                onBlur={() => setFocusedInput(null)}
                 className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white outline-none transition-all duration-300 focus:bg-white/10 focus:border-white/30 resize-none peer pt-8"
                 required
               />
               <label 
                 htmlFor="message" 
                 className={`absolute left-6 text-zinc-500 transition-all duration-300 pointer-events-none ${
-                  focusedInput === 'message' ? 'top-3 text-xs text-zinc-300' : 'top-6 text-base'
+                  focusedInput === 'message' || formData.message.length > 0 ? 'top-3 text-xs text-zinc-300' : 'top-6 text-base'
                 }`}
               >
                 Tell me about your project
