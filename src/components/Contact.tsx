@@ -7,7 +7,6 @@ import Script from "next/script";
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [focusedInput, setFocusedInput] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const [isSending, setIsSending] = useState(false);
   const [feedbackMsg, setFeedbackMsg] = useState<{ type: 'success' | 'error', text: string } | null>(null);
@@ -31,7 +30,6 @@ export default function Contact() {
           setIsSending(false);
           formRef.current?.reset();
           setFormData({ name: '', email: '', message: '' });
-          setFocusedInput(null);
         }, (error: any) => {
           console.error(error);
           setFeedbackMsg({ type: 'error', text: 'Failed to send message.' });
@@ -103,16 +101,13 @@ export default function Contact() {
                 name="name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                onFocus={() => setFocusedInput('name')}
-                onBlur={() => setFocusedInput(null)}
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white outline-none transition-all duration-300 focus:bg-white/10 focus:border-white/30 peer"
+                placeholder=" "
+                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 pt-7 pb-3 text-white outline-none transition-all duration-300 focus:bg-white/10 focus:border-white/30 peer"
                 required
               />
               <label 
                 htmlFor="name" 
-                className={`absolute left-6 text-zinc-500 transition-all duration-300 pointer-events-none ${
-                  focusedInput === 'name' || formData.name.length > 0 ? 'top-2 text-xs text-zinc-300' : 'top-4 text-base'
-                }`}
+                className="absolute left-6 top-2 text-xs text-zinc-300 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-500 peer-focus:top-2 peer-focus:text-xs peer-focus:text-zinc-300"
               >
                 Your Name
               </label>
@@ -127,16 +122,13 @@ export default function Contact() {
                 name="email"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                onFocus={() => setFocusedInput('email')}
-                onBlur={() => setFocusedInput(null)}
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white outline-none transition-all duration-300 focus:bg-white/10 focus:border-white/30 peer"
+                placeholder=" "
+                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 pt-7 pb-3 text-white outline-none transition-all duration-300 focus:bg-white/10 focus:border-white/30 peer"
                 required
               />
               <label 
                 htmlFor="email" 
-                className={`absolute left-6 text-zinc-500 transition-all duration-300 pointer-events-none ${
-                  focusedInput === 'email' || formData.email.length > 0 ? 'top-2 text-xs text-zinc-300' : 'top-4 text-base'
-                }`}
+                className="absolute left-6 top-2 text-xs text-zinc-300 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-500 peer-focus:top-2 peer-focus:text-xs peer-focus:text-zinc-300"
               >
                 Email Address
               </label>
@@ -150,16 +142,13 @@ export default function Contact() {
                 rows={4}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                onFocus={() => setFocusedInput('message')}
-                onBlur={() => setFocusedInput(null)}
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white outline-none transition-all duration-300 focus:bg-white/10 focus:border-white/30 resize-none peer pt-8"
+                placeholder=" "
+                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 pt-8 pb-4 text-white outline-none transition-all duration-300 focus:bg-white/10 focus:border-white/30 resize-none peer"
                 required
               />
               <label 
                 htmlFor="message" 
-                className={`absolute left-6 text-zinc-500 transition-all duration-300 pointer-events-none ${
-                  focusedInput === 'message' || formData.message.length > 0 ? 'top-3 text-xs text-zinc-300' : 'top-6 text-base'
-                }`}
+                className="absolute left-6 top-3 text-xs text-zinc-300 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-500 peer-focus:top-3 peer-focus:text-xs peer-focus:text-zinc-300"
               >
                 Tell me about your project
               </label>
