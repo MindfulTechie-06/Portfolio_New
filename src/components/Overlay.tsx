@@ -17,7 +17,7 @@ export default function Overlay() {
   useEffect(() => {
     const interval = setInterval(() => {
       setRoleIndex((prev) => (prev + 1) % roles.length);
-    }, 2000);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -45,7 +45,7 @@ export default function Overlay() {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white drop-shadow-lg">
             Himanish Chatterjee.
           </h1>
-          <div className="mt-4 h-8 md:h-10 flex items-center justify-center">
+          <div className="mt-4 h-12 md:h-16 flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.p
                 key={roleIndex}
@@ -53,7 +53,7 @@ export default function Overlay() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -15, opacity: 0 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
-                className="text-xl md:text-2xl text-zinc-300 font-light tracking-wide m-0"
+                className="text-3xl md:text-4xl text-zinc-200 font-semibold tracking-wide m-0"
               >
                 {roles[roleIndex]}
               </motion.p>
