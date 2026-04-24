@@ -1,9 +1,25 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+
+const roles = [
+  "Frontend Developer.",
+  "UI/UX Designer.",
+  "Software Engineer.",
+  "Creative Developer."
+];
 
 export default function Overlay() {
   const { scrollYProgress } = useScroll();
+  const [roleIndex, setRoleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRoleIndex((prev) => (prev + 1) % roles.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   // Opacity transforms for each section to fade in/out at specific scroll percentages
   const opacity1 = useTransform(scrollYProgress, [0, 0.1, 0.2], [1, 1, 0]);
@@ -29,9 +45,20 @@ export default function Overlay() {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white drop-shadow-lg">
             Himanish Chatterjee.
           </h1>
-          <p className="mt-4 text-xl md:text-2xl text-zinc-300 font-light tracking-wide">
-            Frontend Developer.
-          </p>
+          <div className="mt-4 h-8 md:h-10 flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={roleIndex}
+                initial={{ y: 15, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -15, opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="text-xl md:text-2xl text-zinc-300 font-light tracking-wide m-0"
+              >
+                {roles[roleIndex]}
+              </motion.p>
+            </AnimatePresence>
+          </div>
         </motion.div>
 
         {/* SECTION 2: Left Aligned (30% Scroll) */}
