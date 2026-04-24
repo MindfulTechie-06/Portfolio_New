@@ -45,15 +45,15 @@ export default function Overlay() {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white drop-shadow-lg">
             Himanish Chatterjee.
           </h1>
-          <div className="mt-4 h-12 md:h-16 flex items-center justify-center">
+          <div className="mt-4 md:mt-6 h-16 md:h-20 flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.p
                 key={roleIndex}
-                initial={{ y: 15, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -15, opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="text-3xl md:text-4xl text-zinc-200 font-semibold tracking-wide m-0"
+                initial={{ y: 30, opacity: 0, filter: "blur(10px)" }}
+                animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+                exit={{ y: -30, opacity: 0, filter: "blur(10px)" }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className="text-3xl md:text-5xl font-semibold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-200 to-zinc-500 m-0"
               >
                 {roles[roleIndex]}
               </motion.p>
