@@ -61,7 +61,7 @@ const Footer = () => {
               <h3 className="text-lg font-semibold text-white mb-4">Connect</h3>
               <div className="flex items-center space-x-4">
                 <a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/MindfulTechie-06"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-neutral-900 border border-neutral-800 hover:bg-neutral-800 hover:border-neutral-700 text-neutral-400 hover:text-white transition-all duration-300 hover:scale-110"
@@ -70,7 +70,7 @@ const Footer = () => {
                   <FaGithub size={20} />
                 </a>
                 <a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/himanish-chatterjee-153a50327/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-neutral-900 border border-neutral-800 hover:bg-neutral-800 hover:border-neutral-700 text-neutral-400 hover:text-blue-500 transition-all duration-300 hover:scale-110"
@@ -79,7 +79,7 @@ const Footer = () => {
                   <FaLinkedin size={20} />
                 </a>
                 <a
-                  href="mailto:your.email@example.com"
+                  href="mailto:your.chatterjeehimanish520@gmail.com"
                   className="p-3 rounded-full bg-neutral-900 border border-neutral-800 hover:bg-neutral-800 hover:border-neutral-700 text-neutral-400 hover:text-red-400 transition-all duration-300 hover:scale-110"
                   aria-label="Send Email"
                 >
