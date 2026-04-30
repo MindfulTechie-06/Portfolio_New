@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUp } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaArrowUp, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   const scrollToSection = (id: string) => {
@@ -77,6 +77,24 @@ const Footer = () => {
                   aria-label="LinkedIn Profile"
                 >
                   <FaLinkedin size={20} />
+                </a>
+                <a
+                  href="https://www.instagram.com/_.himanixx._?igsh=MXUxMGUzZWlmZzFpYQ=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full bg-neutral-900 border border-neutral-800 hover:bg-neutral-800 hover:border-neutral-700 text-neutral-400 hover:text-pink-500 transition-all duration-300 hover:scale-110"
+                  aria-label="Instagram Profile"
+                >
+                  <FaInstagram size={20} />
+                </a>
+                <a
+                  href="https://x.com/HimanishCh65417"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-full bg-neutral-900 border border-neutral-800 hover:bg-neutral-800 hover:border-neutral-700 text-neutral-400 hover:text-sky-400 transition-all duration-300 hover:scale-110"
+                  aria-label="Twitter Profile"
+                >
+                  <FaTwitter size={20} />
                 </a>
                 <a
                   href="mailto:chatterjeehimanish520@gmail.com"
