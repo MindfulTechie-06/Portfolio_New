@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import CallToAction from "./CallToAction";
 
 export default function About() {
   return (
@@ -22,6 +23,9 @@ Beyond coding, I’m deeply involved in innovation and community building, contr
 
 I’m constantly pushing myself to grow—whether it’s mastering new technologies, leading teams, or building products that actually matter.
         </p>
+
+        {/* CTA Section */}
+        <CallToAction />
       </motion.div>
     </section>
   );
