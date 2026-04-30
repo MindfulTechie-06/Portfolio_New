@@ -27,7 +27,7 @@ export default function CallToAction() {
 
         {/* Secondary Button */}
         <a
-          href="/resume.pdf"
+          href="https://drive.google.com/drive/folders/1A2LuAd_1Wb9mlVlM6qRCnO-zUUFw-dci?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="group relative flex items-center justify-center gap-2 bg-transparent text-white border border-white/20 font-medium px-8 py-3.5 rounded-full hover:border-white/50 hover:bg-white/5 hover:scale-105 transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] w-full sm:w-auto"
