@@ -5,6 +5,20 @@ import { motion } from "framer-motion";
 export default function Experience() {
   const experiences = [
     {
+      role: "Tech Volunteer",
+      company: "AWS User Group Kolkata",
+      date: "Present",
+      description: "Contributing to the cloud community by helping organize technical meetups, managing events, and facilitating networking opportunities for local developers and cloud enthusiasts.",
+      current: true
+    },
+    {
+      role: "Tech Team Member",
+      company: "AWS User Group Kolkata",
+      date: "Present",
+      description: "Supporting the community's digital growth through web development, technical problem-solving, and active collaboration on innovative tech initiatives.",
+      current: true
+    },
+    {
       role: "Tech Team Member",
       company: "Digital Dominators Community",
       date: "Present",
@@ -23,7 +37,7 @@ export default function Experience() {
   return (
     <section id="experience" className="bg-[#121212] min-h-screen py-32 px-6 md:px-20 lg:px-40 text-white flex flex-col justify-center items-center relative z-20">
       <div className="max-w-4xl w-full">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -35,7 +49,7 @@ export default function Experience() {
 
         <div className="relative border-l border-white/20 ml-6 md:ml-10">
           {experiences.map((exp, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -44,12 +58,11 @@ export default function Experience() {
               className="mb-16 pl-10 md:pl-16 relative"
             >
               {/* Timeline Dot */}
-              <div 
-                className={`absolute w-5 h-5 rounded-full -left-[10.5px] top-1.5 border-4 border-[#121212] ${
-                  exp.current ? "bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)]" : "bg-zinc-600"
-                }`}
+              <div
+                className={`absolute w-5 h-5 rounded-full -left-[10.5px] top-1.5 border-4 border-[#121212] ${exp.current ? "bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)]" : "bg-zinc-600"
+                  }`}
               />
-              
+
               <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
                 <h3 className="text-2xl md:text-3xl font-semibold tracking-tight">{exp.role}</h3>
                 <span className="text-sm font-mono text-zinc-500 mt-2 md:mt-0 px-3 py-1 bg-white/5 rounded-full border border-white/10 w-fit">
