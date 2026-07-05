@@ -5,12 +5,20 @@ import { motion } from "framer-motion";
 export default function Experience() {
   const experiences = [
     {
+      role: "Community Champion",
+      company: "React Kolkata",
+      date: "Present",
+      description: "Facilitating knowledge sharing and networking among Kolkata’s React developers through regular meetups and collaborative events.",
+      current: true
+    },
+    {
       role: "Volunteer",
       company: "AWS User Group Kolkata",
       date: "Present",
       description: "Contributing to the cloud community by helping organize technical meetups, managing events, and facilitating networking opportunities for local developers and cloud enthusiasts.",
       current: true
     },
+
     {
       role: "Tech Team Member",
       company: "Sourcify",
