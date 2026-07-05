@@ -52,19 +52,35 @@ export default function ScrollyCanvas() {
     const canvasRatio = rect.width / rect.height;
     const imgRatio = img.width / img.height;
     
+    // Zoom in slightly (1.25x) to allow shifting horizontally without blank areas
+    const zoom = 1.25;
     let drawWidth = rect.width;
     let drawHeight = rect.height;
     let offsetX = 0;
     let offsetY = 0;
 
     if (canvasRatio > imgRatio) {
-      // Canvas is wider than image
-      drawHeight = rect.width / imgRatio;
-      offsetY = (rect.height - drawHeight) / 2;
+      // Canvas is wider than image (image is scaled to width, overflows vertically)
+      drawWidth = rect.width * zoom;
+      drawHeight = (rect.width / imgRatio) * zoom;
+      
+      offsetY = (rect.height - drawHeight) / 2; // Center vertically
+      
+      // Horizontal shifting: Align portrait to the right.
+      // Standard center would be -excessWidth * 0.5.
+      // Shifting to -excessWidth * 0.05 moves the image content to the right (portrait moves right).
+      const excessWidth = drawWidth - rect.width;
+      offsetX = -excessWidth * 0.05;
     } else {
-      // Canvas is taller than image
-      drawWidth = rect.height * imgRatio;
-      offsetX = (rect.width - drawWidth) / 2;
+      // Canvas is taller than image (image is scaled to height, overflows horizontally)
+      drawHeight = rect.height * zoom;
+      drawWidth = (rect.height * imgRatio) * zoom;
+      
+      offsetY = (rect.height - drawHeight) / 2; // Center vertically
+      
+      // Horizontal shifting: Align portrait to the right.
+      const excessWidth = drawWidth - rect.width;
+      offsetX = -excessWidth * 0.05;
     }
 
     ctx.clearRect(0, 0, rect.width, rect.height);
