@@ -12,6 +12,13 @@ export default function Experience() {
       current: true
     },
     {
+      role: "Design Team ",
+      company: "OpenSource Con India",
+      date: "Present",
+      description: "Creating engaging visuals that promote India's largest open-source conference and support the OSS community through compelling design.",
+      current: true
+    },
+    {
       role: "Volunteer",
       company: "AWS User Group Kolkata",
       date: "Present",
