@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function Experience() {
   const experiences = [
     {
-      role: "Tech Volunteer",
+      role: "Volunteer",
       company: "AWS User Group Kolkata",
       date: "Present",
       description: "Contributing to the cloud community by helping organize technical meetups, managing events, and facilitating networking opportunities for local developers and cloud enthusiasts.",
@@ -13,7 +13,7 @@ export default function Experience() {
     },
     {
       role: "Tech Team Member",
-      company: "AWS User Group Kolkata",
+      company: "Sourcify",
       date: "Present",
       description: "Supporting the community's digital growth through web development, technical problem-solving, and active collaboration on innovative tech initiatives.",
       current: true
