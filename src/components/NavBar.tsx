@@ -51,7 +51,7 @@ export default function NavBar() {
 
   return (
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center w-full pointer-events-none">
-      <nav className="pointer-events-auto flex items-center gap-1 sm:gap-2 rounded-full bg-[#1e2330]/80 backdrop-blur-md border border-white/5 p-1.5 shadow-2xl">
+      <nav className="pointer-events-auto flex items-center gap-1 sm:gap-2 rounded-full bg-[#17213A]/85 backdrop-blur-md border border-[#73CFF6]/15 p-1.5 shadow-2xl">
         {navItems.map((item) => {
           const isActive = activeSection === item.id;
 
@@ -60,13 +60,13 @@ export default function NavBar() {
               key={item.id}
               onClick={() => scrollTo(item.id)}
               className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
-                isActive ? "text-white" : "text-zinc-400 hover:text-zinc-200"
+                isActive ? "text-[#73CFF6] font-semibold" : "text-[#F8FAFC]/70 hover:text-[#73CFF6]"
               }`}
             >
               {isActive && (
                 <motion.div
                   layoutId="activeNav"
-                  className="absolute inset-0 bg-white/10 rounded-full"
+                  className="absolute inset-0 bg-[#73CFF6]/10 rounded-full border border-[#73CFF6]/20"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
