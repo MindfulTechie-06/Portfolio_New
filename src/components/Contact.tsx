@@ -73,10 +73,10 @@ export default function Contact() {
           (window as any).emailjs.init("yO5Ehzjsk4yMF8Mcs");
         }}
       />
-      <section id="contact" className="bg-[#121212] min-h-[90vh] py-32 px-6 md:px-20 lg:px-40 text-white flex flex-col justify-center items-center relative z-20 overflow-hidden">
+      <section id="contact" className="bg-bg-primary min-h-[90vh] py-32 px-6 md:px-20 lg:px-40 text-text-primary flex flex-col justify-center items-center relative z-20 overflow-hidden transition-colors duration-500">
         
         {/* Background ambient glow matching the high-end aesthetic */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-text-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
         <motion.div 
           variants={containerVariants}
@@ -88,7 +88,7 @@ export default function Contact() {
           <motion.h2 variants={itemVariants} className="text-5xl md:text-7xl font-bold tracking-tight mb-4">
             Let's Talk
           </motion.h2>
-          <motion.p variants={itemVariants} className="text-lg md:text-xl text-zinc-400 font-light mb-12">
+          <motion.p variants={itemVariants} className="text-lg md:text-xl text-text-secondary font-light mb-12">
             Ready to start your next project or just want to say hi? Send me a message.
           </motion.p>
           
@@ -102,17 +102,17 @@ export default function Contact() {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 placeholder=" "
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 pt-7 pb-3 text-white outline-none transition-all duration-300 focus:bg-white/10 focus:border-white/30 peer"
+                className="w-full bg-input-bg border border-input-border rounded-2xl px-6 pt-7 pb-3 text-text-primary outline-none transition-all duration-300 focus:bg-input-bg focus:border-input-border-focus peer"
                 required
               />
               <label 
                 htmlFor="name" 
-                className="absolute left-6 top-2 text-xs text-zinc-300 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-500 peer-focus:top-2 peer-focus:text-xs peer-focus:text-zinc-300"
+                className="absolute left-6 top-2 text-xs text-text-secondary transition-all duration-300 pointer-events-none peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-placeholder-shown:text-text-muted peer-focus:top-2 peer-focus:text-xs peer-focus:text-text-secondary"
               >
                 Your Name
               </label>
               {/* Animated Bottom Glow */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-white transition-all duration-500 ease-out group-focus-within:w-full" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-text-primary transition-all duration-500 ease-out group-focus-within:w-full" />
             </motion.div>
 
             <motion.div variants={itemVariants} className="relative group">
@@ -123,16 +123,16 @@ export default function Contact() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 placeholder=" "
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 pt-7 pb-3 text-white outline-none transition-all duration-300 focus:bg-white/10 focus:border-white/30 peer"
+                className="w-full bg-input-bg border border-input-border rounded-2xl px-6 pt-7 pb-3 text-text-primary outline-none transition-all duration-300 focus:bg-input-bg focus:border-input-border-focus peer"
                 required
               />
               <label 
                 htmlFor="email" 
-                className="absolute left-6 top-2 text-xs text-zinc-300 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-500 peer-focus:top-2 peer-focus:text-xs peer-focus:text-zinc-300"
+                className="absolute left-6 top-2 text-xs text-text-secondary transition-all duration-300 pointer-events-none peer-placeholder-shown:top-5 peer-placeholder-shown:text-base peer-placeholder-shown:text-text-muted peer-focus:top-2 peer-focus:text-xs peer-focus:text-text-secondary"
               >
                 Email Address
               </label>
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-white transition-all duration-500 ease-out group-focus-within:w-full" />
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-text-primary transition-all duration-500 ease-out group-focus-within:w-full" />
             </motion.div>
 
             <motion.div variants={itemVariants} className="relative group">
@@ -143,16 +143,16 @@ export default function Contact() {
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 placeholder=" "
-                className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 pt-8 pb-4 text-white outline-none transition-all duration-300 focus:bg-white/10 focus:border-white/30 resize-none peer"
+                className="w-full bg-input-bg border border-input-border rounded-2xl px-6 pt-8 pb-4 text-text-primary outline-none transition-all duration-300 focus:bg-input-bg focus:border-input-border-focus resize-none peer"
                 required
               />
               <label 
                 htmlFor="message" 
-                className="absolute left-6 top-3 text-xs text-zinc-300 transition-all duration-300 pointer-events-none peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:text-zinc-500 peer-focus:top-3 peer-focus:text-xs peer-focus:text-zinc-300"
+                className="absolute left-6 top-3 text-xs text-text-secondary transition-all duration-300 pointer-events-none peer-placeholder-shown:top-6 peer-placeholder-shown:text-base peer-placeholder-shown:text-text-muted peer-focus:top-3 peer-focus:text-xs peer-focus:text-text-secondary"
               >
                 Tell me about your project
               </label>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-white transition-all duration-500 ease-out group-focus-within:w-[calc(100%-3rem)]" />
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-text-primary transition-all duration-500 ease-out group-focus-within:w-[calc(100%-3rem)]" />
             </motion.div>
 
             {feedbackMsg && (
@@ -173,7 +173,7 @@ export default function Contact() {
               whileHover={!isSending ? { scale: 1.02 } : {}}
               whileTap={!isSending ? { scale: 0.98 } : {}}
               disabled={isSending}
-              className={`group relative flex items-center justify-center gap-2 w-full mt-2 bg-white text-[#121212] font-semibold text-lg py-4 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] ${
+              className={`group relative flex items-center justify-center gap-2 w-full mt-2 bg-button-primary-bg text-button-primary-text font-semibold text-lg py-4 rounded-2xl overflow-hidden transition-all duration-300 shadow-md hover:shadow-lg dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] cursor-pointer ${
                 isSending ? 'opacity-70 cursor-not-allowed' : ''
               }`}
             >

@@ -25,7 +25,6 @@ export default function Experience() {
       description: "Contributing to the cloud community by helping organize technical meetups, managing events, and facilitating networking opportunities for local developers and cloud enthusiasts.",
       current: true
     },
-
     {
       role: "Tech Team Member",
       company: "Sourcify",
@@ -39,18 +38,11 @@ export default function Experience() {
       date: "Present",
       description: "Contributing to the community's technical infrastructure, building robust web solutions, and engaging in collaborative large-scale digital initiatives.",
       current: true
-    },
-    // {
-    //   role: "Creative Developer",
-    //   company: "Freelance",
-    //   date: "2024 - Present",
-    //   description: "Designing and developing interactive 3D web experiences, creative portfolios, and optimized frontend architectures for selected clients.",
-    //   current: false
-    // }
+    }
   ];
 
   return (
-    <section id="experience" className="bg-[#121212] min-h-screen py-32 px-6 md:px-20 lg:px-40 text-white flex flex-col justify-center items-center relative z-20">
+    <section id="experience" className="bg-bg-primary min-h-screen py-32 px-6 md:px-20 lg:px-40 text-text-primary flex flex-col justify-center items-center relative z-20 transition-colors duration-500">
       <div className="max-w-4xl w-full">
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
@@ -62,7 +54,7 @@ export default function Experience() {
           Experience
         </motion.h2>
 
-        <div className="relative border-l border-white/20 ml-6 md:ml-10">
+        <div className="relative border-l border-border-color ml-6 md:ml-10">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
@@ -74,26 +66,29 @@ export default function Experience() {
             >
               {/* Timeline Dot */}
               <div
-                className={`absolute w-5 h-5 rounded-full -left-[10.5px] top-1.5 border-4 border-[#121212] ${exp.current ? "bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)]" : "bg-zinc-600"
-                  }`}
+                className={`absolute w-5 h-5 rounded-full -left-[10.5px] top-1.5 border-4 border-bg-primary transition-all duration-300 ${
+                  exp.current 
+                    ? "bg-text-primary shadow-[0_0_15px_rgba(115,207,246,0.5)] dark:shadow-[0_0_15px_rgba(255,255,255,0.4)]" 
+                    : "bg-text-muted"
+                }`}
               />
 
               <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
                 <h3 className="text-2xl md:text-3xl font-semibold tracking-tight">{exp.role}</h3>
-                <span className="text-sm font-mono text-zinc-500 mt-2 md:mt-0 px-3 py-1 bg-white/5 rounded-full border border-white/10 w-fit">
+                <span className="text-sm font-mono text-text-muted mt-2 md:mt-0 px-3 py-1 bg-card-bg rounded-full border border-border-color w-fit">
                   {exp.date}
                 </span>
               </div>
-              <h4 className="text-lg text-zinc-300 font-light mb-4 flex items-center gap-2">
+              <h4 className="text-lg text-text-secondary font-light mb-4 flex items-center gap-2">
                 {exp.company}
                 {exp.current && (
                   <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-text-primary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-text-primary"></span>
                   </span>
                 )}
               </h4>
-              <p className="text-zinc-400 font-light text-lg leading-relaxed max-w-2xl">
+              <p className="text-text-secondary font-light text-lg leading-relaxed max-w-2xl">
                 {exp.description}
               </p>
             </motion.div>

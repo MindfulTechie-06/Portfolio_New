@@ -5,9 +5,9 @@ import { useState, useEffect } from "react";
 import { FaGithub, FaLinkedin, FaInstagram, FaDownload, FaEnvelope } from "react-icons/fa";
 
 const subtitles = [
-  { text: "Frontend Developer", color: "text-[#17213A]", dot: "bg-[#17213A]" },
-  { text: "AI Enthusiast", color: "text-[#4F7D4A]", dot: "bg-[#4F7D4A]" },
-  { text: "Open Source Contributor", color: "text-[#D7263D]", dot: "bg-[#D7263D]" }
+  { text: "Frontend Developer", color: "text-text-primary", dot: "bg-text-primary" },
+  { text: "AI Enthusiast", color: "text-[#4F7D4A] dark:text-[#6EE7B7]", dot: "bg-[#4F7D4A] dark:bg-[#6EE7B7]" },
+  { text: "Open Source Contributor", color: "text-[#D7263D] dark:text-[#F87171]", dot: "bg-[#D7263D] dark:bg-[#F87171]" }
 ];
 
 const socialLinks = [
@@ -92,7 +92,7 @@ export default function Overlay() {
   };
 
   return (
-    <div className="relative w-full min-h-screen bg-[#F8FAFC] text-[#17213A] flex items-center overflow-hidden z-10">
+    <div className="relative w-full min-h-screen bg-bg-primary text-text-primary flex items-center overflow-hidden z-10 transition-colors duration-500">
       
       {/* Background Photograph Container */}
       <div className="absolute right-0 top-0 bottom-0 w-full lg:w-1/2 h-full z-0 pointer-events-none">
@@ -102,13 +102,22 @@ export default function Overlay() {
           className="w-full h-full object-cover object-center lg:object-[right_center] select-none"
         />
         {/* Soft left-to-right gradient overlay to blend into the left side's background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#F8FAFC] via-[#F8FAFC]/90 lg:via-[#F8FAFC]/30 to-[#F8FAFC]/30 lg:to-transparent z-10 pointer-events-none" />
+        <div 
+          className="absolute inset-0 z-10 pointer-events-none" 
+          style={{ backgroundImage: "var(--hero-gradient-r)" }}
+        />
         {/* Mobile vertical blend (top and bottom) for readability when image spans full screen */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F8FAFC]/95 via-transparent to-[#F8FAFC]/95 z-10 block lg:hidden pointer-events-none" />
+        <div 
+          className="absolute inset-0 z-10 block lg:hidden pointer-events-none" 
+          style={{ backgroundImage: "var(--hero-gradient-b)" }}
+        />
       </div>
 
-      {/* Bottom fade-to-dark transition to blend with the dark #121212 About section below */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#121212] via-[#121212]/40 to-transparent z-20 pointer-events-none" />
+      {/* Bottom fade-to-dark transition to blend with the About section below */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 h-32 z-20 pointer-events-none" 
+        style={{ backgroundImage: "var(--hero-to-about-gradient)" }}
+      />
 
       {/* Floating Blurred Gradient Blobs */}
       <motion.div
@@ -122,7 +131,7 @@ export default function Overlay() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute -left-20 top-1/4 w-[400px] h-[400px] bg-[#73CFF6]/8 rounded-full blur-[130px] z-0 pointer-events-none"
+        className="absolute -left-20 top-1/4 w-[400px] h-[400px] bg-[#73CFF6]/8 dark:bg-[#73CFF6]/12 rounded-full blur-[130px] z-0 pointer-events-none"
       />
       <motion.div
         animate={{
@@ -136,7 +145,7 @@ export default function Overlay() {
           ease: "easeInOut",
           delay: 1,
         }}
-        className="absolute left-1/3 bottom-1/4 w-[350px] h-[350px] bg-[#D7263D]/4 rounded-full blur-[120px] z-0 pointer-events-none"
+        className="absolute left-1/3 bottom-1/4 w-[350px] h-[350px] bg-[#D7263D]/4 dark:bg-[#D7263D]/8 rounded-full blur-[120px] z-0 pointer-events-none"
       />
 
       {/* Floating Particles (Extracted colors) */}
@@ -176,14 +185,14 @@ export default function Overlay() {
         >
           <motion.p
             variants={itemVariants}
-            className="text-[#D7263D] font-mono text-sm md:text-base tracking-widest uppercase mb-3 font-bold"
+            className="text-[#D7263D] dark:text-[#F87171] font-mono text-sm md:text-base tracking-widest uppercase mb-3 font-bold"
           >
             Hi, I'm 👋
           </motion.p>
           
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-[#17213A] mb-4 leading-none"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-text-primary mb-4 leading-none"
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#73CFF6] to-[#D7263D] font-black drop-shadow-[0_2px_5px_rgba(23,33,58,0.05)]">
               Himanish
@@ -214,7 +223,7 @@ export default function Overlay() {
           {/* Short Description */}
           <motion.p
             variants={itemVariants}
-            className="text-[#2B2B2B]/85 text-base md:text-lg lg:text-xl font-light leading-relaxed mb-8 max-w-xl"
+            className="text-text-secondary text-base md:text-lg lg:text-xl font-light leading-relaxed mb-8 max-w-xl"
           >
             Building modern, responsive and high-performance web experiences with React, TypeScript, Tailwind CSS and AI.
           </motion.p>
@@ -229,7 +238,7 @@ export default function Overlay() {
                 const element = document.getElementById("projects");
                 if (element) element.scrollIntoView({ behavior: "smooth" });
               }}
-              className="group relative flex items-center justify-center gap-2 bg-gradient-to-r from-[#17213A] to-[#D7263D] text-[#F8FAFC] font-semibold px-8 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-[0_4px_15px_rgba(215,38,61,0.25)] hover:shadow-[0_4px_25px_rgba(115,207,246,0.5)] cursor-pointer text-center"
+              className="group relative flex items-center justify-center gap-2 bg-gradient-to-r from-[#17213A] dark:from-[#73CFF6] to-[#D7263D] text-[#F8FAFC] dark:text-[#0B1224] font-semibold px-8 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-[0_4px_15px_rgba(215,38,61,0.25)] dark:shadow-[0_4px_20px_rgba(115,207,246,0.3)] cursor-pointer text-center"
             >
               <span>View Projects</span>
               <span className="transform group-hover:translate-x-1 transition-transform">→</span>
@@ -239,10 +248,10 @@ export default function Overlay() {
               href="https://drive.google.com/drive/folders/1A2LuAd_1Wb9mlVlM6qRCnO-zUUFw-dci?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center justify-center gap-2 bg-[#F8FAFC]/90 hover:bg-[#17213A]/5 text-[#17213A] border border-[#2B2B2B]/20 font-semibold px-8 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-sm cursor-pointer hover:border-[#73CFF6] hover:text-[#73CFF6] text-center"
+              className="group relative flex items-center justify-center gap-2 bg-card-bg hover:bg-card-bg-hover text-text-primary border border-border-color font-semibold px-8 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-sm cursor-pointer hover:border-accent-secondary hover:text-accent-secondary text-center"
             >
               <span>Download Resume</span>
-              <FaDownload className="text-[#17213A]/60 group-hover:text-[#73CFF6] transition-colors" size={14} />
+              <FaDownload className="text-text-secondary group-hover:text-accent-secondary transition-colors" size={14} />
             </a>
           </motion.div>
 
@@ -259,7 +268,7 @@ export default function Overlay() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 rounded-full border border-[#2B2B2B]/15 bg-[#F8FAFC] text-[#2B2B2B]/80 transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:border-[#73CFF6] hover:text-[#73CFF6] hover:shadow-[0_0_15px_rgba(115,207,246,0.3)] hover:bg-[#73CFF6]/5"
+                  className="p-3.5 rounded-full border border-border-color bg-card-bg text-text-secondary transition-all duration-300 hover:scale-110 hover:-translate-y-1 hover:border-accent-secondary hover:text-accent-secondary hover:shadow-[0_0_15px_rgba(115,207,246,0.2)] hover:bg-accent-secondary/5"
                   aria-label={`${link.name} Profile`}
                 >
                   <Icon size={18} />
@@ -279,10 +288,10 @@ export default function Overlay() {
           const element = document.getElementById("about");
           if (element) element.scrollIntoView({ behavior: "smooth" });
         }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 cursor-pointer text-[#17213A]/60 hover:text-[#D7263D] transition-colors select-none z-30"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 cursor-pointer text-text-secondary hover:text-accent-primary transition-colors select-none z-30"
       >
         <span className="text-[10px] font-mono tracking-widest uppercase font-semibold">Scroll Down</span>
-        <div className="w-5 h-9 border border-[#17213A]/40 rounded-full flex justify-center p-1">
+        <div className="w-5 h-9 border border-text-secondary/40 rounded-full flex justify-center p-1">
           <motion.div
             animate={{
               y: [0, 10, 0],
@@ -292,7 +301,7 @@ export default function Overlay() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="w-1 h-1 bg-[#17213A]/60 rounded-full"
+            className="w-1 h-1 bg-text-secondary/60 rounded-full"
           />
         </div>
       </motion.div>

@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="bg-[#121212] min-h-screen text-white outline-none selection:bg-white/30">
+    <main className="bg-bg-primary min-h-screen text-text-primary outline-none transition-colors duration-500">
       <div id="home" className="relative">
         <Overlay />
         <ScrollyCanvas />

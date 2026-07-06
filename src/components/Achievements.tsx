@@ -61,7 +61,7 @@ export default function Achievements() {
   ];
 
   return (
-    <section id="achievements" className="relative z-20 bg-[#121212] py-32 px-6 md:px-20 lg:px-40 text-white">
+    <section id="achievements" className="relative z-20 bg-bg-secondary py-32 px-6 md:px-20 lg:px-40 text-text-primary transition-colors duration-500">
       <div className="max-w-7xl mx-auto">
 
         <motion.div
@@ -74,7 +74,7 @@ export default function Achievements() {
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
             Achievements
           </h2>
-          <p className="mt-4 text-zinc-400 text-lg max-w-2xl mx-auto font-light">
+          <p className="mt-4 text-text-secondary text-lg max-w-2xl mx-auto font-light">
             A track record of hackathons, continuous learning, and community contributions.
           </p>
         </motion.div>
@@ -87,31 +87,31 @@ export default function Achievements() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
               viewport={{ once: true, margin: "-50px" }}
-              className="group relative rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md overflow-hidden hover:bg-white/10 transition-colors duration-500 flex flex-col justify-between"
+              className="group relative rounded-3xl border border-border-color bg-card-bg p-8 backdrop-blur-md overflow-hidden hover:bg-card-bg-hover transition-colors duration-500 flex flex-col justify-between shadow-sm"
             >
               {/* Subtle hover glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-accent-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
               <div className="relative z-10 flex-grow">
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6">
-                  <Award className="text-zinc-300" size={24} />
+                <div className="w-12 h-12 rounded-full bg-text-primary/10 flex items-center justify-center mb-6">
+                  <Award className="text-text-primary" size={24} />
                 </div>
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="text-2xl font-semibold tracking-tight leading-tight">{item.title}</h3>
                 </div>
-                <p className="text-zinc-300 font-medium mb-3">{item.event}</p>
-                <p className="text-zinc-400 font-light mb-8 pt-4 border-t border-white/10">
+                <p className="text-text-secondary font-medium mb-3">{item.event}</p>
+                <p className="text-text-secondary font-light mb-8 pt-4 border-t border-border-color leading-relaxed">
                   {item.description}
                 </p>
               </div>
 
               <div className="relative z-10 mt-auto flex items-center justify-between">
-                <span className="text-sm font-mono text-zinc-500 bg-[#121212] px-3 py-1 rounded-full">{item.year}</span>
+                <span className="text-sm font-mono text-text-muted bg-bg-primary px-3 py-1 rounded-full border border-border-color">{item.year}</span>
                 <a
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm font-medium text-white hover:text-zinc-300 transition-colors bg-white/10 px-4 py-2 rounded-full hover:bg-white/20"
+                  className="flex items-center gap-2 text-sm font-medium text-text-primary hover:text-text-primary/80 transition-colors bg-text-primary/10 px-4 py-2 rounded-full hover:bg-text-primary/20"
                 >
                   {item.buttonText || "View Certificate"} <ExternalLink size={14} />
                 </a>
@@ -131,7 +131,7 @@ export default function Achievements() {
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
             Certifications
           </h2>
-          <p className="mt-4 text-zinc-400 text-lg max-w-2xl mx-auto font-light">
+          <p className="mt-4 text-text-secondary text-lg max-w-2xl mx-auto font-light">
             Professional certifications demonstrating continuous learning and expertise.
           </p>
         </motion.div>
@@ -144,30 +144,30 @@ export default function Achievements() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
               viewport={{ once: true, margin: "-50px" }}
-              className="group relative rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md overflow-hidden hover:bg-white/10 transition-colors duration-500 flex flex-col justify-between"
+              className="group relative rounded-3xl border border-border-color bg-card-bg p-8 backdrop-blur-md overflow-hidden hover:bg-card-bg-hover transition-colors duration-500 flex flex-col justify-between shadow-sm"
             >
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-accent-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
 
               <div className="relative z-10 flex-grow">
-                <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6">
-                  <BadgeCheck className="text-zinc-300" size={24} />
+                <div className="w-12 h-12 rounded-full bg-text-primary/10 flex items-center justify-center mb-6">
+                  <BadgeCheck className="text-text-primary" size={24} />
                 </div>
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="text-xl font-semibold tracking-tight leading-tight">{item.title}</h3>
                 </div>
-                <p className="text-zinc-300 font-medium mb-3">{item.issuer}</p>
-                <p className="text-zinc-400 font-light text-sm mb-8 pt-4 border-t border-white/10">
+                <p className="text-text-secondary font-medium mb-3">{item.issuer}</p>
+                <p className="text-text-secondary font-light text-sm mb-8 pt-4 border-t border-border-color leading-relaxed">
                   {item.description}
                 </p>
               </div>
 
               <div className="relative z-10 mt-auto flex items-center justify-between">
-                <span className="text-sm font-mono text-zinc-500 bg-[#121212] px-3 py-1 rounded-full">{item.year}</span>
+                <span className="text-sm font-mono text-text-muted bg-bg-primary px-3 py-1 rounded-full border border-border-color">{item.year}</span>
                 <a
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm font-medium text-white hover:text-zinc-300 transition-colors bg-white/10 px-4 py-2 rounded-full hover:bg-white/20"
+                  className="flex items-center gap-2 text-sm font-medium text-text-primary hover:text-text-primary/80 transition-colors bg-text-primary/10 px-4 py-2 rounded-full hover:bg-text-primary/20"
                 >
                   View <ExternalLink size={14} />
                 </a>

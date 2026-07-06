@@ -1,8 +1,73 @@
 @import "tailwindcss";
 
 :root {
-  --background: #121212;
-  --foreground: #ededed;
+  --background: #ffffff;
+  --foreground: #17213A;
+  
+  --bg-primary: #ffffff;
+  --bg-secondary: #F8FAFC;
+  --text-primary: #17213A;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border-color: rgba(23, 33, 58, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-bg-hover: rgba(255, 255, 255, 0.95);
+  --accent-primary: #D7263D;
+  --accent-secondary: #0EA5E9;
+  --button-primary-bg: #17213A;
+  --button-primary-text: #ffffff;
+  --footer-bg: #F8FAFC;
+  --input-bg: rgba(23, 33, 58, 0.03);
+  --input-border: rgba(23, 33, 58, 0.15);
+  --input-border-focus: rgba(23, 33, 58, 0.4);
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --nav-border: rgba(23, 33, 58, 0.1);
+  --nav-text: rgba(23, 33, 58, 0.7);
+  --nav-text-hover: #0EA5E9;
+  
+  /* Hero specific gradients */
+  --hero-gradient-r: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0.9) 30%, rgba(255, 255, 255, 0.3) 70%, transparent);
+  --hero-gradient-b: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), transparent, rgba(255, 255, 255, 0.95));
+  --hero-to-about-gradient: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0.5), transparent);
+
+  /* Selection colors */
+  --selection-bg: rgba(215, 38, 61, 0.15);
+  --selection-text: #17213A;
+}
+
+.dark {
+  --background: #0B1224;
+  --foreground: #ffffff;
+  
+  --bg-primary: #0B1224;
+  --bg-secondary: #111A30;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-bg-hover: rgba(255, 255, 255, 0.1);
+  --accent-primary: #D7263D;
+  --accent-secondary: #73CFF6;
+  --button-primary-bg: #ffffff;
+  --button-primary-text: #0B1224;
+  --footer-bg: #060b18;
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --input-border: rgba(255, 255, 255, 0.1);
+  --input-border-focus: rgba(255, 255, 255, 0.3);
+  --nav-bg: rgba(23, 33, 58, 0.85);
+  --nav-border: rgba(115, 207, 246, 0.15);
+  --nav-text: rgba(248, 250, 252, 0.7);
+  --nav-text-hover: #73CFF6;
+  
+  /* Hero specific gradients */
+  --hero-gradient-r: linear-gradient(to right, #0B1224, rgba(11, 18, 36, 0.9) 30%, rgba(11, 18, 36, 0.3) 70%, transparent);
+  --hero-gradient-b: linear-gradient(to bottom, rgba(11, 18, 36, 0.95), transparent, rgba(11, 18, 36, 0.95));
+  --hero-to-about-gradient: linear-gradient(to top, #0B1224, rgba(11, 18, 36, 0.4), transparent);
+
+  /* Selection colors */
+  --selection-bg: rgba(115, 207, 246, 0.3);
+  --selection-text: #ffffff;
 }
 
 @theme inline {
@@ -10,6 +75,27 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-border-color: var(--border-color);
+  --color-card-bg: var(--card-bg);
+  --color-card-bg-hover: var(--card-bg-hover);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-button-primary-bg: var(--button-primary-bg);
+  --color-button-primary-text: var(--button-primary-text);
+  --color-footer-bg: var(--footer-bg);
+  --color-input-bg: var(--input-bg);
+  --color-input-border: var(--input-border);
+  --color-input-border-focus: var(--input-border-focus);
+  --color-nav-bg: var(--nav-bg);
+  --color-nav-border: var(--nav-border);
+  --color-nav-text: var(--nav-text);
+  --color-nav-text-hover: var(--nav-text-hover);
 }
 
 html {
@@ -17,8 +103,53 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-text);
+}
+
+/* Smooth transitions for theme switch */
+.theme-transition,
+.theme-transition *,
+.theme-transition *::before,
+.theme-transition *::after {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 350ms;
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .theme-transition,
+  .theme-transition *,
+  .theme-transition *::before,
+  .theme-transition *::after {
+    transition: none !important;
+    animation: none !important;
+  }
 }

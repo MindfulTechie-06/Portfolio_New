@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { name: "Home", id: "home" },
@@ -51,7 +52,7 @@ export default function NavBar() {
 
   return (
     <div className="fixed top-6 left-0 right-0 z-50 flex justify-center w-full pointer-events-none">
-      <nav className="pointer-events-auto flex items-center gap-1 sm:gap-2 rounded-full bg-[#17213A]/85 backdrop-blur-md border border-[#73CFF6]/15 p-1.5 shadow-2xl">
+      <nav className="pointer-events-auto flex items-center gap-1 sm:gap-2 rounded-full bg-nav-bg backdrop-blur-md border border-nav-border p-1.5 shadow-2xl transition-colors duration-300">
         {navItems.map((item) => {
           const isActive = activeSection === item.id;
 
@@ -60,13 +61,13 @@ export default function NavBar() {
               key={item.id}
               onClick={() => scrollTo(item.id)}
               className={`relative px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
-                isActive ? "text-[#73CFF6] font-semibold" : "text-[#F8FAFC]/70 hover:text-[#73CFF6]"
+                isActive ? "text-nav-text-hover font-semibold" : "text-nav-text hover:text-nav-text-hover"
               }`}
             >
               {isActive && (
                 <motion.div
                   layoutId="activeNav"
-                  className="absolute inset-0 bg-[#73CFF6]/10 rounded-full border border-[#73CFF6]/20"
+                  className="absolute inset-0 bg-accent-secondary/10 rounded-full border border-accent-secondary/20"
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
               )}
@@ -74,6 +75,14 @@ export default function NavBar() {
             </button>
           );
         })}
+        
+        {/* Separator Line */}
+        <div className="w-[1px] h-6 bg-border-color mx-1 self-center" />
+
+        {/* Theme Toggle Button */}
+        <div className="pr-1 flex items-center justify-center">
+          <ThemeToggle />
+        </div>
       </nav>
     </div>
   );
