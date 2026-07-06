@@ -99,7 +99,7 @@ export default function Overlay() {
         <img 
           src="/himanish.jpg" 
           alt="Himanish Chatterjee"
-          className="w-full h-full object-cover object-center lg:object-[right_center] select-none"
+          className="w-full h-full object-cover object-center lg:object-[right_center] select-none transition-all duration-500 filter contrast-[1.12] saturate-[1.12] dark:contrast-100 dark:saturate-100"
         />
         {/* Soft left-to-right gradient overlay to blend into the left side's background */}
         <div 
