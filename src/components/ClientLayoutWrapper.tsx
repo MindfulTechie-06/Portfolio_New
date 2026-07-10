@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "./ThemeProvider";
 import Loader from "./Loader";
 import { AnimatePresence } from "framer-motion";
+import CommandPalette from "./CommandPalette";
 
 export default function ClientLayoutWrapper({
   children,
@@ -28,6 +29,7 @@ export default function ClientLayoutWrapper({
         )}
       </AnimatePresence>
       <div className={isLoading ? "opacity-0 pointer-events-none" : "opacity-100 transition-opacity duration-700"}>
+        <CommandPalette />
         {children}
       </div>
     </ThemeProvider>
